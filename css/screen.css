@@ -2,6 +2,24 @@
 #FONTS
 \*------------------------------------*/
 
+@font-face {
+    font-family: "Source Sans Pro";
+    font-weight: 400;
+    src: url("../fonts/SourceSansPro-Regular.ttf") format("ttf")
+}
+
+@font-face {
+    font-family: "Source Sans Pro";
+    font-weight: 600;
+    src: url("../fonts/SourceSansPro-SemiBold.ttf") format("ttf")
+}
+
+@font-face {
+    font-family: "Source Sans Pro";
+    font-weight: 700;
+    src: url("../fonts/SourceSansPro-Bold.ttf") format("ttf")
+}
+
 /*------------------------------------*\
 #Variables
 \*------------------------------------*/
@@ -15,12 +33,38 @@
     --color-neutral: SLATEGRAY;
     --color-neutral-dark: DARKSLATEGRAY;
 
+    --color-white: #FFFFFF;
+    --color-gray-light-xxxx: #F0F0F7;
+    --color-gray-light-xxx: #EBEBF2;
+    --color-gray-light-xx: #D7DAE2;
+    --color-gray-light-x: #BCBCCB;
+    --color-gray: #A5A4BF;
+    --color-gray-dark-x: #808495;
+    --color-gray-dark-xx: #4D4F5C;
+    --color-gray-dark-xxx: #43425D;
+    --color-gray-dark-xxxx: #3B3B53;
+    --color-green: #3CC480;
+    --color-red: #FF6565;
+    --color-blue: #3B86FF;
+    --color-purple: #A3A0FB;
+    --color-greenblue: #54D8FF;
+
     /* Shadows */
 
     /* border radius */
 
     /* transitions */
     --transition-alpha: .1s;
+
+    /* Whitespace */
+    /* Whitespace */ 
+    --global-baseline: 5px; 
+    --global-whitespace-xxs: var(--global-baseline); /* = 5px */
+    --global-whitespace-xs: calc(var(--global-baseline) * 2); /* = 10px */
+    --global-whitespace-sm: calc(var(--global-baseline) * 3); /* = 15px */
+    --global-whitespace-md: calc(var(--global-baseline) * 4); /* = 20px */
+    --global-whitespace-lg: calc(var(--global-baseline) * 5); /* = 25px */
+    --global-whitespace-xl: calc(var(--global-baseline) * 6); /* = 30px */
 }
 
 /*------------------------------------*\
@@ -34,14 +78,14 @@
 */
 
 html {
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.5;
-    font-family: Helvetica, arial, sans-serif;
-    color: var(--color-neutral-dark);
+    font-family: Source Sans Pro, sans-serif;
+    color: var(--color-gray-dark-xxx);
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: white;
+    background-color: var(--color-gray-light-xxxx);
 }
 
 *,
@@ -97,21 +141,24 @@ h3 {
 }
 
 h1 {
-    font-size: 36px;
-    line-height: 48px;
-    margin: 0 0 24px;
+    font-size: 15px;
+    line-height: calc(var(--global-baseline) * 10);
+    margin: 0/* 0 var(--global-whitespace-md)*/;
+    color: var(--color-white);
+    letter-spacing: 1px;
 }
 
 h2 {
-    font-size: 32px;
-    line-height: 40px;
-    margin: 0 0 24px;
+    font-size: 28px;
+    font-weight: normal;
+    line-height: calc(var(--global-baseline) * 8);
+    margin: 0 0 var(--global-whitespace-lg);
 }
 
 h3 {
     font-size: 26px;
-    line-height: 32px;
-    margin: 0 0 24px;
+    line-height: calc(var(--global-baseline) * 6);
+    margin: 0 0 var(--global-whitespace-md);
 }
 
 h4,
@@ -119,8 +166,8 @@ h5,
 h6 {
     font-size: 16px;
     font-weight: 600;
-    line-height: 24px;
-    margin: 0 0 24px;
+    line-height: calc(var(--global-baseline) * 5);
+    margin: 0 0 var(--global-whitespace-md);
 }
 
 p,
@@ -130,7 +177,7 @@ dl,
 table,
 address,
 figure {
-    margin: 0 0 24px;
+    margin: 0 0 var(--global-whitespace-md);
 }
 
 ul,
@@ -289,11 +336,49 @@ input::placeholder {
 #COMPONENTS
 \*------------------------------------*/
 
+.c-app {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 260px auto;
+    grid-template-areas:
+    'logo topbar'
+    'sidebar main';
+    height: 100vh;
+    grid-template-rows: max-content;
+}
+
+.c-app__logo {
+    background-color: var(--color-gray-dark-xxxx);
+    grid-area: logo;
+}
+
+.c-app__topbar {
+    background-color: var(--color-white);
+    box-shadow: 0px 2px 3px #0000000d;
+    grid-area: topbar;
+}
+
+.c-app__sidebar {
+    background-color: var(--color-gray-dark-xxx);
+    height: 100%;
+    grid-area: sidebar;
+}
+
+.c-app__main {
+    height: 100%;
+    grid-area: main;
+}
+
 /*
     Component: Logo
     ---
     Website main logo
 */
+
+.c-logo {
+    line-height: calc(var(--global-baseline) * 4);
+    padding: 25px;
+}
 
 /*------------------------------------*\
 #UTILITIES
