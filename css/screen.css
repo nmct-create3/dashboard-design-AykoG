@@ -369,6 +369,38 @@ input::placeholder {
     grid-area: main;
 }
 
+.c-sidebar-nav__item {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    
+}
+
+.c-sidebar-nav__item:hover {
+    transition: background-color 1s;
+    background-color: var(--color-gray-dark-xxxx);
+    border-left: 5px solid var(--color-purple);
+}
+
+.c-sidebar-nav__link {
+    font-size: 15px;
+    color: var(--color-white) !important;
+    text-decoration: none;
+    line-height: calc(var(--global-baseline) * 4);
+    padding-left: 10px;
+    vertical-align: baseline;
+}
+
+.c-sidebar-nav__icon {
+    fill: var(--color-gray);
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+
+.c-sidebar-nav__item:hover .c-sidebar-nav__icon {
+    fill: var(--color-purple);
+}
+
 /*
     Component: Logo
     ---

@@ -51,6 +51,9 @@
             <symbol id="c-icon_setting" viewBox="0 0 32 32">
             <path d="M26.6 10.4l2.2-4.2-2.8-2.8-4.2 2.2c-0.635-0.364-1.372-0.642-2.155-0.793l-0.045-0.007-1.6-4.8h-4l-1.6 4.6c-0.76 0.198-1.425 0.472-2.041 0.822l0.041-0.022-4.2-2.2-3 3 2.2 4.2c-0.328 0.575-0.602 1.24-0.787 1.942l-0.013 0.058-4.6 1.6v4l4.6 1.6c0.2 0.8 0.6 1.4 0.8 2.2l-2.2 4.2 2.8 2.8 4.2-2.2c0.635 0.364 1.372 0.642 2.155 0.793l0.045 0.007 1.6 4.6h4l1.6-4.6c0.8-0.2 1.4-0.6 2.2-0.8l4.2 2.2 2.8-2.8-2.2-4.2c0.364-0.635 0.642-1.372 0.793-2.155l0.007-0.045 4.6-1.6v-4l-4.6-1.6c-0.198-0.76-0.472-1.425-0.822-2.041l0.022 0.041zM16 22c-0.032 0.001-0.071 0.001-0.109 0.001-3.254 0-5.892-2.638-5.892-5.892 0-0.038 0-0.077 0.001-0.115l-0 0.006c-0.001-0.032-0.001-0.071-0.001-0.109 0-3.254 2.638-5.892 5.892-5.892 0.038 0 0.077 0 0.115 0.001l-0.006-0c0.032-0.001 0.071-0.001 0.109-0.001 3.254 0 5.892 2.638 5.892 5.892 0 0.038-0 0.077-0.001 0.115l0-0.006c0.001 0.032 0.001 0.071 0.001 0.109 0 3.254-2.638 5.892-5.892 5.892-0.038 0-0.077-0-0.115-0.001l0.006 0z"></path>
             </symbol>
+            <symbol id="c-icon_help-center" viewBox="0 0 32 32">
+                <path d="M16 0c-8.837 0-16 7.163-16 16s7.163 16 16 16c8.837 0 16-7.163 16-16v0c-0.027-8.826-7.174-15.973-15.997-16h-0.003zM16 20c-2.209 0-4-1.791-4-4s1.791-4 4-4c2.209 0 4 1.791 4 4v0c-0.007 2.206-1.794 3.993-3.999 4h-0.001zM16 4c0.014-0 0.030-0 0.046-0 1.877 0 3.65 0.443 5.221 1.231l-0.067-0.031-3.112 3.112c-0.625-0.197-1.344-0.311-2.089-0.311s-1.464 0.114-2.14 0.324l0.051-0.014-3.11-3.112c1.504-0.757 3.277-1.2 5.154-1.2 0.016 0 0.032 0 0.048 0h-0.002zM4 16c-0-0.014-0-0.030-0-0.046 0-1.877 0.443-3.65 1.231-5.221l-0.031 0.067 3.112 3.112c-0.197 0.625-0.311 1.344-0.311 2.089s0.114 1.464 0.324 2.14l-0.014-0.051-3.112 3.11c-0.757-1.504-1.2-3.277-1.2-5.154 0-0.016 0-0.032 0-0.048v0.002zM16 28c-0.014 0-0.030 0-0.046 0-1.877 0-3.65-0.443-5.221-1.231l0.067 0.031 3.112-3.112c0.625 0.197 1.344 0.311 2.089 0.311s1.464-0.113 2.14-0.324l-0.051 0.014 3.11 3.112c-1.504 0.757-3.277 1.2-5.154 1.2-0.016 0-0.032-0-0.048-0h0.002zM26.8 21.2l-3.112-3.112c0.197-0.625 0.311-1.344 0.311-2.089s-0.113-1.464-0.324-2.14l0.014 0.051 3.112-3.11c0.757 1.518 1.2 3.307 1.2 5.2s-0.443 3.682-1.231 5.269l0.031-0.069z"></path>
+            </symbol>
             </defs>
         </svg>
         <div class="c-app">
@@ -65,16 +68,16 @@
             <div class="c-app__sidebar">
                 <nav>
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Dashboard</a></li>
-                        <li><a href="#">Inbox</a></li>
-                        <li><a href="#">Products</a></li>
-                        <li><a href="#">Invoices</a></li>
-                        <li><a href="#">Customers</a></li>
-                        <li><a href="#">Chat Room</a></li>
-                        <li><a href="#">Calendar</a></li>
-                        <li><a href="#">Help Center</a></li>
-                        <li><a href="#">Settings</a></li>
+                        <li class="c-sidebar-nav__item"><a style="text-decoration: none" href="#"><svg class="c-sidebar-nav__icon"><use xlink:href="#c-icon_home"></use></svg><span class="c-sidebar-nav__link">Home</span></a></li>
+                        <li class="c-sidebar-nav__item"><a style="text-decoration: none" href="#"><svg class="c-sidebar-nav__icon"><use xlink:href="#c-icon_dashboard"></use></svg><span class="c-sidebar-nav__link">Dashboard</a></li>
+                        <li class="c-sidebar-nav__item"><a style="text-decoration: none" href="#"><svg class="c-sidebar-nav__icon"><use xlink:href="#c-icon_inbox"></use></svg><span class="c-sidebar-nav__link">Inbox</a></li>
+                        <li class="c-sidebar-nav__item"><a style="text-decoration: none" href="#"><svg class="c-sidebar-nav__icon"><use xlink:href="#c-icon_products"></use></svg><span class="c-sidebar-nav__link">Products</a></li>
+                        <li class="c-sidebar-nav__item"><a style="text-decoration: none" href="#"><svg class="c-sidebar-nav__icon"><use xlink:href="#c-icon_invoices"></use></svg><span class="c-sidebar-nav__link">Invoices</a></li>
+                        <li class="c-sidebar-nav__item"><a style="text-decoration: none" href="#"><svg class="c-sidebar-nav__icon"><use xlink:href="#c-icon_customers"></use></svg><span class="c-sidebar-nav__link">Customers</a></li>
+                        <li class="c-sidebar-nav__item"><a style="text-decoration: none" href="#"><svg class="c-sidebar-nav__icon"><use xlink:href="#c-icon_chat-room"></use></svg><span class="c-sidebar-nav__link">Chat Room</a></li>
+                        <li class="c-sidebar-nav__item"><a style="text-decoration: none" href="#"><svg class="c-sidebar-nav__icon"><use xlink:href="#c-icon_calendar"></use></svg><span class="c-sidebar-nav__link">Calendar</a></li>
+                        <li class="c-sidebar-nav__item"><a style="text-decoration: none" href="#"><svg class="c-sidebar-nav__icon"><use xlink:href="#c-icon_help-center"></use></svg><span class="c-sidebar-nav__link">Help Center</a></li>
+                        <li class="c-sidebar-nav__item"><a style="text-decoration: none" href="#"><svg class="c-sidebar-nav__icon"><use xlink:href="#c-icon_setting"></use></svg><span class="c-sidebar-nav__link">Settings</a></li>
                     </ul>
                 </nav>
             </div>
