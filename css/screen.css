@@ -29,6 +29,8 @@
     --color-alpha-light: MEDIUMSLATEBLUE;
     --color-alpha: SLATEBLUE;
 
+    --global-color-alpha: #A3A0FB;
+
     --color-neutral-light: LIGHTSLATEGRAY;
     --color-neutral: SLATEGRAY;
     --color-neutral-dark: DARKSLATEGRAY;
@@ -47,16 +49,18 @@
     --color-red: #FF6565;
     --color-blue: #3B86FF;
     --color-purple: #A3A0FB;
+    --color-purple-dark: #3C3B54;
     --color-greenblue: #54D8FF;
 
     /* Shadows */
+    --global-box-shadow: 0px 2px 3px #0000000d;
 
     /* border radius */
 
     /* transitions */
-    --transition-alpha: .1s;
+    --global-transition-alpha: .2s;
+    --global-transition-beta: .1s;
 
-    /* Whitespace */
     /* Whitespace */ 
     --global-baseline: 5px; 
     --global-whitespace-xxs: var(--global-baseline); /* = 5px */
@@ -337,67 +341,120 @@ input::placeholder {
 \*------------------------------------*/
 
 .c-app {
-    height: 100%;
-    display: grid;
-    grid-template-columns: 260px auto;
-    grid-template-areas:
-    'logo topbar'
-    'sidebar main';
-    height: 100vh;
-    grid-template-rows: max-content;
+    --c-app__topbar-height: calc(var(--global-baseline) * 15);
+    min-height: 100vh;
 }
 
 .c-app__logo {
     background-color: var(--color-gray-dark-xxxx);
-    grid-area: logo;
+    padding: 0 var(--global-whitespace-lg);
+    display: flex;
+    align-items: center;
 }
 
 .c-app__topbar {
     background-color: var(--color-white);
-    box-shadow: 0px 2px 3px #0000000d;
-    grid-area: topbar;
+    box-shadow: var(--global-box-shadow);
+    z-index: 20;
+    display: none;
+    /* box-shadow: 0px 2px 3px #0000000d; */
 }
 
 .c-app__sidebar {
     background-color: var(--color-gray-dark-xxx);
-    height: 100%;
-    grid-area: sidebar;
+    display: none;
+}
+
+.c-app__main {
+    background-color: var(--color-gray-light-xxxx);
+}
+
+/* .c-app__topbar,
+.c-app__logo {
+    position: sticky;
+    top: 0
+}
+
+.c-app__sidebar {
+    position: sticky;
+    top: var(--c-app__topbar-height);
+    height: calc(100vh - var(--c-app__topbar-height));
+    overflow: auto;
+    background-color: var(--color-gray-dark-xxx);
 }
 
 .c-app__main {
     height: 100%;
-    grid-area: main;
+} */
+
+@media (min-width: 992px) {
+    .c-app__topbar,
+    .c-app__sidebar {
+        display: block;
+    }
+
+    .c-app {
+        display: grid;
+        grid-template-columns: 17rem 1fr;
+        grid-template-rows: var(--c-app__topbar-height) 1fr;
+    }
 }
 
-.c-sidebar-nav__item {
-    padding-top: 15px;
-    padding-bottom: 15px;
+.c-main-nav__list {
+    margin-bottom: 0;
+}
+
+.c-main-nav__item {
+    margin: var(--global-baseline) 0;
     
 }
 
-.c-sidebar-nav__item:hover {
+.c-main-nav__item:hover {
     transition: background-color 1s;
     background-color: var(--color-gray-dark-xxxx);
     border-left: 5px solid var(--color-purple);
 }
 
-.c-sidebar-nav__link {
-    font-size: 15px;
-    color: var(--color-white) !important;
+.c-main-nav__link {
+    display: flex;
+    align-items: center;
     text-decoration: none;
+    color: var(--color-white);
+    font-size: 1rem;
     line-height: calc(var(--global-baseline) * 4);
-    padding-left: 10px;
-    vertical-align: baseline;
+    padding: var(--global-whitespace-sm) var(--global-whitespace-lg) var(--global-whitespace-sm) var(--global-whitespace-md);
+    border-left: 5px solid var(--global-color-alpha);
+    transform: translateX(-5px);
+    width: calc(100% + 5px);
+    transition: transform var(--global-transition-beta);
 }
 
-.c-sidebar-nav__icon {
+.c-main-nav__link:hover {
+    transition-duration: var(--global-transition-alpha);
+}
+
+.c-main-nav__link,
+.c-main-nav__link:hover,
+.c-main-nav__link:visited {
+    color: var(--color-white);
+}
+
+.c-main-nav__link:hover,
+.c-main-nav__link:focus,
+.is-selected .c-main-nav__link {
+    color: var(--color-white);
+    background-color: var(--color-purple-dark);
+    transform: none;
+}
+
+.c-main-nav__icon {
     fill: var(--color-gray);
     width: 16px;
     height: 16px;
     vertical-align: middle;
 }
 
-.c-sidebar-nav__item:hover .c-sidebar-nav__icon {
+.c-main-nav__item:hover .c-main-nav__icon {
     fill: var(--color-purple);
 }
 
